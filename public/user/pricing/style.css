@@ -1,0 +1,189 @@
+body {
+  font-family: "Roboto", Sans-Serif;
+  padding:0;
+  margin:0;
+  margin-bottom:10px;
+  background-color: #F5F6F8;
+}
+#main_content {
+  z-index:1;
+}
+#jawa {
+  display:block;
+  align-items: center;
+  justify-content: center;
+  border:0px solid black;
+  text-align: center;
+  margin: 70px 40px 50px 40px;
+}
+#jawa h1 {
+  margin:0;
+}
+#jawa p {
+  color: #555555;
+  line-height: 1.6;
+}
+.pricing_card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding:25px;
+  margin: 0 30px 40px 30px;
+  border-radius: 10px;
+  text-align:center;
+  gap:15px;
+  background-color: white;
+  border:2px solid #d9d9d9;
+}
+.pricing_card h5 {
+  font-size: 22px;
+  margin: 0;
+}
+#coin_num span {
+  display:flex;
+  gap:5px;
+}
+#coin_num span p {
+  margin:0;
+  font-size: 28px;
+  border:0px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight:600;
+  color:#1976D2;
+  gap:50px;
+}
+#coin_num h5 {
+  font-size: 26px;
+  border:0px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:0px;
+}
+.pricing_card p {
+  margin: 0;
+  font-size: 16px;
+  color:#555555;
+  margin-top:5px;
+}
+.pricing_card #price_subtext {
+  color:#555555;
+}
+.pricing_card button {
+  padding:12px;
+  border:none;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  font-weight: 450;
+  font-size:18px;
+  color:black;
+}
+.pricing_card img {
+  width:30px;
+  margin:0;
+}
+.pricing_card span {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:3px;
+}
+.pricing_card p {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin:0;
+  padding:0;
+  gap:5px;
+}
+#procoin_img {
+  border: 0px solid black;
+ width:25px;
+}
+
+#custom_amount {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+#custom_card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding:35px 30px;
+  margin: 0 30px 40px 30px;
+  border-radius: 10px;
+  text-align:center;
+  gap:15px;
+  background-color: white;
+}
+#custom_card h5 {
+  font-size: 22px;
+  margin: 0;
+}
+#custom_card p {
+  margin: 12px 50px 0 50px;
+  font-size: 16px;
+  color:#555555;
+  margin-bottom:20px;
+  line-height:1.4;
+}
+#custom_input {
+  padding:10px;
+  font-size:16px;
+  border:1px solid #CCCCCC;
+  text-align: center;
+  width:60% ;
+  outline:none;
+} 
+#custom_main {
+  display:flex;
+  justify-content: center;
+}
+#custom_main button {
+  padding:12px;
+  border:none;
+  font-weight: 450;
+  font-size:18px;
+  color:white;
+  background-color: #1976D2;
+}
+#custom_price {
+  font-weight:bold;
+}
+#custom_note {
+  margin-top: 15px;
+  border:1px solid yellow;
+  border-radius:8px;
+  padding:0;
+  padding:5px 10px;
+  background-color: #fefce8;
+}
+#custom_note p {
+  margin:10px;
+  font-size:14px;
+  text-align: left;
+  color:brown;
+}
+#custom_note p span {
+  font-weight:600;
+}
+#logout_confirmation {
+  position: fixed;
+  top:70px;
+  display:none;
+  z-index: 9999 !important;
+  background: transparent;
+  background-color: rgba(0,0,0,0.3);
+}
+.pricing_card:hover {
+  border:2px solid #bfbfbf;
+  cursor: pointer;
+}
+.pricing_card button:hover {
+  background-color: #e5e7eb;
+  cursor: pointer;
+}

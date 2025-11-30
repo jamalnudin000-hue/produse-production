@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Journal | Produse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="create-journal.css">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+.journal-container {
+  background: #fff;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 24px;
+}
+
+.journal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1976d2;
+}
+
+.journal-date {
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pin-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #2e7d32;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.save-btn:hover {
+  background: #256628;
+}
+
+/* Prompt */
+.prompt {
+  color: #555;
+  margin-bottom: 12px;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Editor */
+.editor textarea {
+  width: 100%;
+  height: 320px;
+  padding: 20px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  resize: none;
+  outline: none;
+  line-height: 1.6;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.editor textarea:focus {
+  border-color: #1976d2;
+  background: #fefefe;
+}
+
+/* Mood selector */
+.mood {
+  margin-top: 16px;
+}
+.mood label {
+  display: block;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 8px;
+}
+.moods button {
+  background: #e3f2fd;
+  border: none;
+  font-size: 1.5rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: transform 0.2s ease;
+}
+.moods button:hover {
+  transform: scale(1.15);
+}
+
+/* Autosave text */
+.autosave {
+  text-align: right;
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .journal-container {
+    padding: 16px;
+  }
+  .editor textarea {
+    height: 260px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="journal-container">
+    <!-- Header -->
+    <header class="journal-header">
+      <button class="back-btn">←</button>
+      <div class="journal-date" id="journalDate">Monday, 25 November 2025</div>
+      <div class="actions">
+        <button class="pin-btn" title="Pin">&#128204;</button>
+        <button class="save-btn">Save</button>
+      </div>
+    </header>
+
+    <!-- Prompt -->
+    <div class="prompt">
+      <p>✨ How was your day today?</p>
+    </div>
+
+    <!-- Editor -->
+    <section class="editor">
+      <textarea placeholder="Write your journal here..."></textarea>
+    </section>
+
+    <!-- Mood Selector -->
+    <div class="mood">
+      <label>How do you feel today?</label>
+      <div class="moods">
+        <button>😊</button>
+        <button>😐</button>
+        <button>😔</button>
+        <button>😡</button>
+      </div>
+    </div>
+
+    <!-- Autosave indicator -->
+    <p class="autosave">Saved just now</p>
+  </div>
+
+  <script>
+    // Tampilkan tanggal otomatis
+    const date = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("journalDate").textContent = date.toLocaleDateString('en-GB', options);
+  </script>
+</body>
+</html>

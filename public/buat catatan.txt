@@ -1,0 +1,72 @@
+async function dispatchDue() {
+  const mode = DELIVERY_MODE;
+  const conn = await pool.getConnection();
+
+  try {
+    // Ambil reminder yang sudah waktunya
+    // Kita JOIN dengan tabel users untuk ambil nomor HP pemilik reminder
+    const [rows] = await conn.execute(
+      `SELECT r.*, u.phone as user_phone 
+       FROM reminders r
+       JOIN users u ON r.user_id = u.id
+       WHERE r.status='scheduled' AND r.fire_at_utc <= UTC_TIMESTAMP()
+       ORDER BY r.fire_at_utc ASC
+       LIMIT 50`
+    );
+
+    for (const r of rows) {
+      try {
+        const title = r.title || 'Reminder';
+        const content = (r.description && r.description.trim()) ? r.description : 'Waktunya!';
+        const message = `🔔 *REMINDER: ${title}*\n\n${content}\n\n_Sent from Produse_`;
+
+        // 1. Cek Channel: WhatsApp
+        // Kita kirim ke WA jika channelnya 'whatsapp' ATAU user memilih checkbox WA di frontend
+        // (Di frontend kamu ada checkbox, asumsikan itu disimpan ke kolom 'channel')
+        
+        let sent = false;
+
+        // LOGIC WHATSAPP
+        if (r.channel === 'whatsapp' || r.channel.includes('whatsapp')) {
+            if (r.user_phone) {
+                try {
+                    // Tembak API Bot Lokal di Port 8080
+                    await axios.post('http://127.0.0.1:8080/send-message', {
+                        target: r.user_phone,
+                        message: message
+                    });
+                    console.log(`[Produse] WA dikirim ke ${r.user_phone}`);
+                    sent = true;
+                } catch (waErr) {
+                    console.error('[Produse] Gagal kirim WA:', waErr.message);
+                    // Jangan throw error agar code bisa lanjut update status
+                }
+            } else {
+                console.log('[Produse] User tidak punya no HP di database');
+            }
+        }
+
+        // LOGIC TERMUX (Default / Fallback)
+        if (r.channel === 'termux' || mode === 'termux') {
+             const cmd = `termux-notification --id ${r.id} --priority high --sound --title ${sh(title)} --content ${sh(content)}`;
+             await new Promise((resolve) => exec(cmd, () => resolve()));
+             sent = true;
+        }
+
+        // Update status jadi fired
+        await conn.execute(
+          `UPDATE reminders SET status='fired', fired_at=UTC_TIMESTAMP() WHERE id=?`,
+          [r.id]
+        );
+
+      } catch (inner) {
+        console.error('dispatchDue item error:', inner);
+      }
+    }
+
+  } catch (e) {
+    console.error('dispatchDue error:', e);
+  } finally {
+    conn.release();
+  }
+}

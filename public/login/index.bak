@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — PRODUSE</title>
+  <script>
+const form = document.querySelector('form'); // pastikan mengarah ke form login
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.querySelector('input[name="email"]').value.trim();
+  const password = document.querySelector('input[name="password"]').value;
+
+  try {
+    const r = await fetch('http://127.0.0.1:3000/api/auth/login', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      credentials: 'include'
+    , body: JSON.stringify({ email, password }) });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.message || 'Gagal login');
+    // contoh cek profil:
+    const me = await fetch('http://127.0.0.1:3000/api/auth/me', { credentials: 'include' }).then(r=>r.json());
+    alert('Halo, ' + me.name);
+    // TODO: redirect ke dashboard kamu nanti
+  } catch (err) {
+    alert(err.message);
+  }
+});
+</script>
+  <style>
+body.auth{
+  background: #F9F9F9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.auth-card{
+  width: 100%; max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  padding: 28px;
+  text-align: center;
+}
+.auth-logo{ width: 55%; margin: 0 auto 8px; display:block; }
+.auth-title{ font-size: 24px; margin: 6px 0; }
+.auth-sub{ color: #555; margin-bottom: 16px; }
+
+.auth-result{
+  margin-top: 16px;
+  background: #F0FDF4;
+  border: 1px solid #E8F5E9;
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: flex; gap: 10px; align-items: center;
+  text-align: left;
+}
+.auth-result .avatar{ width: 36px; height: 36px; border-radius: 50%; }
+
+.auth-divider{
+  position: relative; margin: 18px 0;
+  font-size: 13px; color: #64748B;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.auth-divider:before, .auth-divider:after{
+  content:""; display:block; height:1px; background:#E0E0E0;
+  position:absolute; top:50%; width:40%;
+}
+.auth-divider:before{ left:0; } .auth-divider:after{ right:0; }
+
+.auth-ghost-btn{
+  display:flex; padding:10px 18px; border-radius: 8px;
+  border: 1.5px solid #1976D2; color:#1976D2; text-decoration:none; font-weight:600;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.auth-ghost-btn:hover{ background:#E3F2FD; }
+
+.auth-terms{ margin-top: 16px; color:#64748B; font-size:12px; }
+.hidden{ display:none; }
+input {
+  padding: 8px;
+  font-size: 16px;
+  width: 70%;
+  text-decoration:none;
+  border: 0px solid #1976D2;
+  border-bottom: 2px solid #1976D2;
+  outline: none;
+}
+button {
+  background-color: #1976D2;
+  font-size: 16px;
+  padding: 10px 16px;
+  width: 40%;
+  border: none;
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+}
+#get_started_button{ display:inline-block; text-decoration:none; }
+#google {
+  width: 18px;
+  margin-right:10px;
+}
+  </style>
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body class="auth">
+  <div class="auth-card">
+    <img src="../logo.png" alt="PRODUSE logo" class="auth-logo" />
+    <br>
+    <h1 class="auth-title">Welcome back 👋</h1>
+    <p class="auth-sub">Sign in to continue to PRODUSE</p>
+    <input type="email" placeholder="Email" required>
+    <br><br>
+    <input type="password" placeholder="Password" required>
+    <br><br><br>
+    <button type="submit">Log In</button>
+    <p class="auth-terms">Don't have an account yet?
+      <a href="../sign-up">Sign up</a>
+    </p>
+    <!-- GIS bootstrap -->
+    <div id="g_id_onload"
+      data-client_id="912469270899-afuehfsahd6r3rh677r2qeicjejtjvsb.apps.googleusercontent.com"
+      data-context="signin"
+      data-ux_mode="popup"
+      data-callback="handleCredentialResponse"
+      data-auto_prompt="false">
+    </div>
+
+    <!-- The button -->
+    <div class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-shape="pill"
+      data-text="signin_with"
+      data-logo_alignment="left">
+    </div>
+
+    <div id="auth-result" class="auth-result hidden"></div>
+
+    <div class="auth-divider"><span>or</span></div>
+    <a href="#" class="auth-ghost-btn"><img id="google" src="../google.png">Continue With Google</a>
+
+    <p class="auth-terms">By continuing you agree to our
+      <a href="#">Terms</a> & <a href="#">Privacy</a>.
+    </p>
+  </div>
+
+ 
+</body>
+</html>

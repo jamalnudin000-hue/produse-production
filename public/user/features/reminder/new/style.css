@@ -1,0 +1,229 @@
+body {
+  display: block;
+  justify-content: center;
+  padding-bottom: 50px;
+  font-family: "Roboto", Sans-Serif;
+  }
+  #top_navbar {
+    position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  margin: 0px;
+  padding: 0 15px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color:black;
+  justify-content: space-between;
+  border-bottom:0px solid rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  #sidebar_icon {
+    background-color: white;
+    border: none;
+  }
+  img {
+    width:26%;
+    margin-left: 35px;
+  }
+  #right_items {
+    display: flex;
+    align-items: center;
+    gap:15px;
+  }
+  .fa-solid.fa-house {
+    font-size:19px;
+  }
+  .fa-solid.fa-bars {
+    font-size: 25px;
+  }
+  .fa-solid.fa-user {
+    border: 0px solid black;
+    padding: 10px;
+    border-radius:50px;
+    background-color: lightgray;
+    font-size: 16px;
+  }
+  #card1 {
+  padding:20px 20px;
+  margin: 80px 10px 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#card {
+  padding:20px 20px;
+  margin: 15px 10px 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#card span {
+  font-family: "Roboto", Sans-Serif;
+  font-weight: 500;
+}
+#card1 span {
+  font-family: "Roboto", Sans-Serif;
+  font-weight: 500;
+}
+#title_input {
+  display: block;
+  align-items: center;
+  margin:0;
+  margin-top:10px;
+  padding:15px 10px;
+  width:100%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Roboto", Sans-Serif;
+  font-size: 15px;
+  outline: none;
+  background-color: #f9f9f9;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+#title_input:focus {
+  outline: 2px solid lightgray;
+  background-color: white;
+}
+#description_input {
+  margin:0;
+  margin-top:10px;
+  padding:15px 15px;
+  width:90%;
+  min-height: 60px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Roboto", Sans-Serif;
+  font-size: 15px;
+  outline: none;
+  background-color: #f9f9f9;
+  resize: vertical;
+}
+#description_input:focus {
+  outline: 2px solid lightgray;
+  background-color: white;
+}
+::placeholder {
+  color: #999999;
+}
+#grid {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  gap:15px 20px;
+}
+label {
+  color: #999999;
+  font-size:15px;
+}
+.field {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+select.date,
+select.month,
+select.year {
+  box-sizing: border-box;
+  outline:none;
+  border:none;
+  border-radius: 8px;
+  width: 120px;
+  padding: 10px 8px;
+  background-color: #f9f9f9;
+}
+select:focus {
+  outline: 2px solid lightgray;
+}
+#clock_time {
+  width: 100%;
+  height: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border:none;
+}
+#clock_time:focus {
+  outline: 2px solid lightgray;
+}
+select#remind_before {
+  margin-top: 10px;
+  box-sizing: border-box;
+  outline:none;
+  border:none;
+  border-radius: 8px;
+  width: 100%;
+  height:40p;
+  padding: 10px 8px;
+  background-color: #f9f9f9;
+}
+#remind_before:focus {
+  outline: 2px solid lightgray;
+}
+.reminder-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8fafd;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.reminder-option:hover {
+  background-color: #eef3fb;
+  transform: scale(1.01);
+}
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.option-left i {
+  font-size: 18px;
+  color: #2f3640;
+  width: 22px;
+  text-align: center;
+}
+.option-left span {
+  font-size: 15px;
+  color: #1c1c1c;
+}
+.reminder-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4c9aff;
+  cursor: pointer;
+}
+.reminder-option:has(input[type="checkbox"]:checked) {
+  background-color: #e1f5fe;
+  border: 1px solid #4c9aff;
+}
+#create_reminder {
+  display: block;
+  width: 90%;
+  margin: auto;
+  border:0px;
+  border-radius: 10px;
+  background-color: #22C55E;
+  padding:15px;
+  font-family: "Roboto", sans-serif;
+  font-weight:bold;
+  font-size: 15px;
+  color:white;
+}
+#logout_confirmation {
+  position: fixed;
+  top:0;
+  display:none;
+  z-index: 9999 !important;
+  background: transparent;
+  background-color: rgba(0,0,0,0.3);
+}

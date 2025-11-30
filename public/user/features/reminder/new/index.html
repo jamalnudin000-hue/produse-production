@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Schedule Reminder</title>
+    <link rel="stylesheet" type="text/css"href="../../../../navbar/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div style="display:block;">
+    <div id="top_navbar">
+      <button id="sidebar_icon"><i class="fa-solid fa-bars"></i></button>
+      <img src="../../../image/logo.png">
+      <div id="right_items">
+        <a href="../dashboard/" class="fa-solid fa-house"></a>
+      <i id="right_profile" class="fa-solid fa-user"></i>
+      </div>
+    </div>
+    <div id="cik">
+          <div id="profile_menu">
+          <div id="profile_menu_value">
+          <a href="../user/profile"><i class="fa-solid fa-user"></i><span>View Profile</span></a><br>
+          <a href="../user/settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a><br>
+          <a href="../user"><i class="fa-solid fa-key"></i><span>Change Password</span></a><br>
+          <hr>
+          <a id="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></a>
+          </div>
+          </div>
+          </div>
+        
+    </div>
+    <div id="navbar_menu">
+            <ul>
+        <li><a href=#><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href=#><i class="fas fa-check-square"></i> Tasks</a></li>
+        <li><a href=#><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href=#><i class="fas fa-file-alt"></i> Documents</a></li>
+        <li><a href="../reminder/"><i class="fas fa-bell"></i> Reminders</a></li>
+        <li><a href=#><i class="fas fa-gear"></i> Settings</a></li>
+      </ul>
+    </div>
+    <div id="navbar_bottom">
+      <ul>
+        <li><a href=#><i class="fas fa-crown"></i> Upgrade</a></li>
+        <li id="quest"><a href=#><i class="fas fa-question"></i> Support</a></li>
+      </ul>
+    </div>
+    <div id="card1">
+      <span>Reminder Title</span>
+      <br>
+      <input type="text" id="title_input" placeholder="Enter the title of this reminder">
+    </div>
+    <div id="card">
+      <span>Description</span>
+      <br>
+      <textarea id="description_input" placeholder="Add details of your reminder..."></textarea>
+    </div>
+    <div id="card">
+      <span>Date & Time</span>
+      <br>
+      <br>
+      <div id="grid">
+      <div class="field">
+        <label>Date</label>
+        <select class="date">
+          <option value="" disabled selected hidden>Select Date</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+        </option>
+      </div>
+      <div class="field">
+        <label>Month</label>
+        <select class="month">
+          <option value="" disabled selected hidden>Select Month</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Year</label>
+        <select class="year">
+          <option value="" disabled selected hidden>Select Year</option>
+          <option>2025</option>
+          <option>2026</option>
+          <option>2027</option>
+          <option>2028</option>
+          <option>2029</option>
+          <option>2030</option>
+        </select>
+      </div>
+      </div>
+      <br>
+      <div style="line-height:20px;">
+        <label>Time</label>
+        <input id="clock_time" type="time">
+        <br>
+        <small id="tz_hint" style="color:#555;display:block;margin-top:6px;"></small>
+        <br>
+    </div>
+    </div>
+    <div id="card">
+  <span>Reminder me before (in minutes)</span><br><br>
+  <input id="reminder_lead" type="number" min="0" value="0" placeholder="minutes (0, 5, 10, 30, 60)">
+</div>
+    <div id="card">
+  <span>How would you like to be reminded?</span>
+
+  <div class="reminder-option">
+    <div class="option-left">
+      <i class="fa-solid fa-bell"></i>
+      <span>Website Notification</span>
+    </div>
+    <input type="checkbox">
+  </div>
+
+  <div class="reminder-option">
+    <div class="option-left">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Email</span>
+    </div>
+    <input type="checkbox">
+  </div>
+
+  <div class="reminder-option">
+    <div class="option-left">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </div>
+    <input type="checkbox">
+  </div>
+
+  <div class="reminder-option">
+    <div class="option-left">
+      <i class="fa-brands fa-telegram"></i>
+      <span>SMS</span>
+    </div>
+    <input type="checkbox">
+  </div>
+</div>
+<button type="submit" id="create_reminder">Create Reminders</button>
+<div id="logout_confirmation">
+      <div id="logout_confirmation_value">
+        <img id="logout_img" src="../../../image/logout.png">
+        <h5>Ready to log out?</h5>
+        <span>You’ll be signed out from your workspace — don’t worry, everything stays right where you left it.</span>
+        <div id="logout_button">
+          <button id="logout_cancel">Cancel</button>
+          <button id="logout_submit">Log out</button>
+        </div>
+      </div>
+    </div>
+<script src="reminder.js"></script>
+<script src="../../../../navbar/style.js"></script>
+<script src="../../../../navbar/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Profil Pengguna - Produse</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../navbar/style.css">
+  </head>
+  <body class="produse-body">
+    <div id="main_navbar"></div>
+
+    <main class="content-wrapper profile-page">
+      <section class="profile-container">
+        
+        <header class="profile-page-header">
+          <div class="profile-page-label">Akun</div>
+          <h1 class="profile-page-title">Profil Pengguna</h1>
+          <p class="profile-page-subtitle">
+            Kelola identitas dan informasi akun Produse Anda.
+          </p>
+        </header>
+
+        <article class="profile-card">
+          <div class="profile-card-main">
+            
+            <div class="profile-identity">
+              <div class="profile-avatar-wrapper">
+                <div class="profile-avatar">
+                  <span id="profile-initial" class="profile-avatar-initial">U</span>
+                </div>
+              </div>
+
+              <div class="profile-text">
+                <h2 id="profile-fullname" class="profile-fullname">Memuat...</h2>
+                <p id="profile-username" class="profile-username">@...</p>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <button class="btn btn-primary profile-edit-btn">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Edit Profil</span>
+              </button>
+
+              <div class="profile-edit-dropdown"> 
+                  <button class="btn btn-secondary btn-upload-photo">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Unggah Foto</span>
+                  </button>
+                  <button class="btn btn-danger btn-delete-photo">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <span>Hapus Foto</span>
+                  </button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="profile-divider">
+
+          <div class="profile-details-grid">
+            <div class="detail-item">
+              <div class="detail-label-wrapper">
+                <div class="detail-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="detail-text">
+                  <span class="detail-label">Email</span>
+                </div>
+              </div>
+              <span id="profile-email" class="detail-value">...</span>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label-wrapper">
+                <div class="detail-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="detail-text">
+                  <span class="detail-label">Nomor Telepon</span>
+                </div>
+              </div>
+              <span id="profile-phone" class="detail-value">...</span>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-label-wrapper">
+                <div class="detail-icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <div class="detail-text">
+                  <span class="detail-label">Bergabung</span>
+                </div>
+              </div>
+              <span id="profile-joined" class="detail-value">...</span>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-label-wrapper">
+                <div class="detail-icon">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="detail-text">
+                  <span class="detail-label">Zona Waktu</span>
+                </div>
+              </div>
+              <span id="profile-timezone" class="detail-value">...</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="../../navbar/navbarFunction.js"></script>
+    <script src="../../navbar/style.js"></script>
+    <script src="../../navbar/profile.js"></script>
+    <script src="profile-edit.js"></script>
+    <script src="profile-data.js"></script>
+  </body>
+</html>

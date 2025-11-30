@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Produse - productivity platform</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap&family=Alan+Sans:wght@300..900&family=Oswald:wght@200..700&family=M+PLUS+Rounded+1c&display=swap&family=Bungee&family=Bebas+Neue&display=swap&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <div id="top_navbar">
+      <div id="navbar_container">
+      <img id="navbar_logo" src="image/logo.png">
+      <div id="navbar_icon">
+        <a id="get_started_button" href="login/index.html">Get Started</a>
+      </div>
+      </div>
+    </div>
+    <div id="container1">
+      <div style="display: flex; justify-content: center;" data-aos="fade-down">
+        <img id="dashboard_art" src="image/dashboardart.jpg">
+      </div>
+      <br>
+      <h1 id="headline" data-aos="fade-up" data-aos-delay="200">Produse</h1>
+      <br>
+      <h6 data-aos="fade-up" data-aos-delay="300">All-in-one productivity platform</h6>
+      <br>
+      <p id="subheadline" data-aos="fade-up" data-aos-delay="400">Stay on top of your goals without the noise. PRODUSE creates a seamless system where everything is organized, accessible, and aligned with how you work best</p>
+      <br>
+      <br>
+      <div id="cta_button" data-aos="fade-up" data-aos-delay="500">
+        <a href="login/index.html" type="submit" id="start_for_free">Start For Free</a>
+        <button type="submit" id="learn_more">Learn More</button>
+      </div>
+      <div id="feature_section">
+        <h3 id="feature_highlights_heading" data-aos="fade-up">Everything You Need to Stay Productive</h3>
+        <section id="feature_highlights_subheading" data-aos="fade-up" data-aos-delay="100">Simple tools designed to keep your work organized and your focus sharp.</section>
+        <br>
+        <br>
+        <div id="card_container">
+          <div id ="feature_highlights_card" data-aos="fade-right">
+            <div id="feature_header">
+              <i id="green" class="fa-solid fa-folder-open"></i>
+              <div id="feature_text">
+                <section>Project Management</section>
+              </div>
+            </div>
+            <section id="feature_description">Plan, assign, and track everything in one place</section>
+          </div>
+          <div id ="feature_highlights_card" data-aos="fade-left" data-aos-delay="100">
+            <div id="feature_header">
+              <i id="blue" class="fa-solid fa-calendar-days"></i>
+              <div id="feature_text">
+                <section>Schedule Reminder</section>
+              </div>
+            </div>
+            <section id="feature_description">Never miss a deadline with smart notifications</section>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div id="card_container">
+          <div id ="feature_highlights_card" data-aos="fade-right">
+            <div id="feature_header">
+              <i id="yellow" class="fa-solid fa-file"></i>
+              <div id="feature_text">
+                <section>Document Tools</section>
+              </div>
+            </div>
+            <section id="feature_description">Write, edit, and organize files in a clean workspace</section>
+          </div>
+          <div id ="feature_highlights_card" data-aos="fade-left" data-aos-delay="100">
+            <div id="feature_header">
+              <i id="purple"  class="fa-solid fa-list-check"></i>
+              <div id="feature_text">
+                <section>To-Do List</section>
+              </div>
+            </div>
+            <section id="feature_description">Stay on top of daily tasks and mark them done with ease</section>
+          </div>
+        </div>
+      </div>
+    <div id="benefit_section">
+      <h3 data-aos="fade-up">⚡ Why Choose PRODUSE?</h3>
+      <p data-aos="fade-up" data-aos-delay="100">PRODUSE isn’t just another tool. It’s a system that helps you stay focused, reduce chaos, and achieve more every day</p>
+      <br>
+      <div id="benefit_list">
+        <div id="benefit_card" data-aos="fade-up">
+          <section id="benefit_title">Save Time</section>
+          <section id="benefit_description">Stop juggling between apps — keep everything in one place</section>
+        </div>
+        <br><br>
+        <div id="benefit_card" data-aos="fade-up" data-aos-delay="100">
+          <section id="benefit_title">Stay Organized</section>
+          <section id="benefit_description">Keep everything clear and structured</section>
+        </div>
+        <br><br>
+        <div id="benefit_card" data-aos="fade-up" data-aos-delay="200">
+          <section id="benefit_title">Boost Productivity</section>
+          <section id="benefit_description">Focus on result, not distraction</section>
+        </div>
+        <br><br>
+        <div id="benefit_card" data-aos="fade-up" data-aos-delay="300">
+          <section id="benefit_title">Work Anywhere</section>
+          <section id="benefit_description">Access PRODUSE anytime and anywhere</section>
+        </div>
+      </div>
+    </div>
+    <div id="market_section">
+      <h3 id="market_section_title" data-aos="fade-up">Who is PRODUSE for?</h3>
+      <p id="market_section_subtitle" data-aos="fade-up" data-aos-delay="100">Designed for modern workflows — from students to professionals</p>
+      <div id="market_card" data-aos="zoom-in">
+        <img src="image/teaching.png" id="teach_img">
+        <div id="market_card_content">
+          <h3 id="title">Students</h3>
+          <ul>
+            <li>Turn schedules & deadlines into tasks</li>
+            <li>Keep notes per subject organized</li>
+            <li>Manage group work with Kanban</li>
+          </ul>
+        </div>
+      </div>
+      <div id="market_card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="image/freelance.png" id="teach_img">
+        <div id="market_card_content">
+          <h3 id="title">Freelancers</h3>
+          <ul>
+            <li>Project boards per client</li>
+            <li>Follow-up & revision reminders</li>
+            <li>Proposal & contract templates</li>
+          </ul>
+        </div>
+      </div>
+      <div id="market_card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="image/work.png" id="teach_img">
+        <div id="market_card_content">
+          <h3 id="title">Knowledge Workers</h3>
+          <ul>
+            <li>Weekly plans & reviews</li>
+            <li>Linked docs & briefs</li>
+            <li>Cross-timezone reminders</li>
+          </ul>
+        </div>
+      </div>
+      <div id="team_market_card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="image/team.png" id="teach_img">
+        <div id="market_card_content">
+          <h3 id="title">Teams / Startup</h3>
+          <ul>
+            <li>Weekly plans & reviews</li>
+            <li>Linked docs & briefs</li>
+            <li>Cross-timezone reminders</li>
+          </ul>
+        </div>
+      </div>
+      <h3 id="market_section_more" data-aos="fade-up">Also great for...</h3>
+      <p id="more_market" data-aos="fade-up" data-aos-delay="100">PRODUSE is flexible enough to support teachers, content creators, communities, small business owners, and even job seekers — anyone who needs to stay organized and productive</p>
+    </div>
+    <div id="final_cta" data-aos="fade-up">
+      <h4>Ready to start your digital productivity?</h4>
+      <br>
+      <button type="submit" href="login/index.html" id="get_started_for_free">Get Started For Free</button>
+    </div>
+    </div>
+    <footer id="footer">
+      <div id="footer_top">
+        <div id="footer_brand">
+          <img src="image/logo.png" alt="Produse Logo" id="footer_logo">
+          <p>All-in-one productivity platform to plan, manage, and stay on track.</p>
+        </div>
+        <div id="footer_links">
+          <div class="footer_col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Templates</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer_col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+          <div class="footer_col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="footer_bottom">
+        <p>© 2025 PRODUSE. All rights reserved.</p>
+        <div id="footer_social">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // Durasi animasi dalam milidetik
+        once: true,    // Animasi hanya terjadi sekali saat scroll ke bawah
+      });
+    </script>
+  </body>
+</html>

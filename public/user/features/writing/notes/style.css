@@ -1,0 +1,129 @@
+body {
+  font-family: "Roboto", Sans-Serif;
+  background-color: #F7F7F7;
+}
+#workspace_toolbar {
+  margin-top:60px;
+  display:flex;
+  flex-direction: column;
+  border:0px solid black;
+  background-color: white;
+  gap:20px;
+  padding:20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+#search {
+  position: relative;
+  display: flex;
+}
+#search input {
+  width: 100%;
+  height: 40px;
+  border-radius: 12px;
+  outline: 1px solid lightgray;
+  border: 0px solid #555555;
+  background-color: #f8f8f8;
+  padding: 0 40px 0 20px;
+  box-sizing: border-box;
+}
+#search input:focus {
+  background-color: white;
+  outline: 2px solid #2e7d32;
+}
+#search i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  pointer-events: none;
+  font-size: 16px;
+}
+#filter_bar {
+  display:flex;
+  flex-direction:row;
+  border:0px solid black;
+  margin:0 0px;
+  gap:15px;
+}
+.filter {
+  border:0px solid  blue;
+  padding: 10px 20px;
+  border-radius: 18px;
+  background-color: #F7F7F7;
+  color:#374151;
+  display:flex;
+  align-items: center;
+}
+.filter span {
+  display:flex;
+  gap:8px;
+  font-weight:500;
+  font-size: 14PX;
+  align-items: center;
+}
+#tes {
+  margin:20px;
+  width:100px;
+}
+#notes_card {
+  display:flex;
+  flex-direction: column;
+  border:0px solid black;
+  padding: 20px 25px;
+  margin:20px 15px;
+  gap:15px;
+  background: white;
+  border-radius:12px;
+}
+#notes_top {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border:0px solid black;
+  align-items: center;
+}
+#notes_top span {
+  font-weight:600;
+}
+#notes_icon {
+  color:#1976D2;
+  background: #E3F2FD;
+  padding:5px;
+  border-radius:50%;
+  width:16px;
+  aspect-ratio: 1 / 1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size:12px;
+}
+#notes_middle {
+  display:flex;
+  flex-direction: row;
+}
+#notes_middle p {
+  margin:0;
+  color:#555555;
+  font-size:15px;
+}
+#notes_bottom {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#notes_bottom p {
+  margin:0;
+  color:#555555;
+  font-size:15px;
+}
+#right_notes_bottom {
+  font-size:12px;
+  display:flex;
+  gap:5px;
+  color:#555555;
+  align-items: center;
+}
+#right_notes_bottom p {
+  font-size:12px;
+}

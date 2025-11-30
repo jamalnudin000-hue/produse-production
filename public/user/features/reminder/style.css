@@ -1,0 +1,182 @@
+body {
+    font-family: "Roboto", Sans-Serif;
+    background: #F7F7F7;
+    width:100%;
+}
+
+h5 {
+    margin:70px 0 8px 15px;
+    font-size: 28px;
+}
+
+/* subheading */
+.subheading {
+    display:flex;
+    margin:0 15px 20px 15px;
+    color:#555555;
+}
+
+/* reminder card area */
+.reminder-card-area {
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+/* card */
+.reminder-card {
+    background:white;
+    padding:25px;
+    margin:0 15px;
+    border-radius:12px;
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* title */
+.reminder-title {
+    margin:0;
+    font-weight:500;
+    font-size:18px;
+}
+
+/* description paragraph */
+.reminder-card p {
+    margin:0;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* time section */
+.reminder-time {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: #555555;
+    font-size: 14px;
+}
+
+.dot {
+    color: lightgray;
+}
+
+.reminder-time span {
+    display: flex;
+    gap: 8px;
+}
+
+/* lead time */
+.reminder-lead {
+    color: #555555;
+    font-size: 14px;
+    display:flex;
+    gap:8px;
+}
+
+/* method tags */
+.reminder-method {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.reminder-method span {
+    color:green;
+    background-color: #E8F5E9;
+    padding:6px 12px;
+    border-radius:6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.fa-regular.fa-bell {
+    color:green;
+}
+
+/* top area */
+.reminder-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* dropdown trigger */
+.reminder-dropdown {
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+/* dropdown menu */
+.reminder-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    gap:8px;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 50;
+    width: 120px;
+}
+
+.reminder-dropdown-menu span {
+    padding: 2px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.reminder-dropdown-menu span:hover {
+    background-color: #f2f2f2;
+}
+
+/* icons */
+.fa-solid.fa-trash {
+    color: #E53935;
+}
+
+.fa-solid.fa-pen-to-square {
+    color: #1E88E5;
+}
+
+/* status badges */
+.reminder-status {
+    margin-left: auto;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    flex-shrink: 0;
+    margin-right:10px;
+}
+
+.reminder-status.status-scheduled {
+    color: #1E88E5;
+    background-color: #E3F2FD;
+    border-color: #BBDEFB;
+}
+
+.reminder-status.status-fired {
+    color: #388E3C;
+    background-color: #E8F5E9;
+    border-color: #C8E6C9;
+}
+
+.reminder-status.status-cancelled {
+    color: #E53935;
+    background-color: #FFEBEE;
+    border-color: #FFCDD2;
+}

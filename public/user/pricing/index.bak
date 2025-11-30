@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Produse Pricing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"href="../../navbar/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+          <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div id="main_content">
+        <div style="display:block;">
+    <div id="top_navbar">
+      <button id="sidebar_icon"><i class="fa-solid fa-bars"></i></button>
+      <img src="../../image/logo.png">
+      <div id="right_items">
+        <a href="../../dashboard/" class="fa-solid fa-house"></a>
+      <i id="right_profile" class="fa-solid fa-user"></i>
+      </div>
+    </div>
+    <div id="cik">
+          <div id="profile_menu">
+          <div id="profile_menu_value">
+          <a href="../../user/profile"><i class="fa-solid fa-user"></i><span>View Profile</span></a><br>
+          <a href="../../user/settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a><br>
+          <a href="../../user"><i class="fa-solid fa-key"></i><span>Change Password</span></a><br>
+          <hr>
+          <a id="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></a>
+          </div>
+          </div>
+          </div>
+        
+    </div>
+    <div id="navbar_menu">
+            <ul>
+        <li><a href=#><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href=#><i class="fas fa-check-square"></i> Tasks</a></li>
+        <li><a href=#><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href=#><i class="fas fa-file-alt"></i> Documents</a></li>
+        <li><a href=#><i class="fas fa-bell"></i> Reminders</a></li>
+        <li><a href=#><i class="fas fa-gear"></i> Settings</a></li>
+      </ul>
+    </div>
+    <div id="navbar_bottom">
+      <ul>
+        <li><a href=#><i class="fas fa-crown"></i> Upgrade</a></li>
+        <li id="quest"><a href=#><i class="fas fa-question"></i> Support</a></li>
+      </ul>
+    </div>
+    
+    <div id="jawa">
+      <h1>ProCoin Pricing</h1>
+      <p>Choose the appropriate package or determine a custom quantity according to your needs</p>
+    </div>
+    <div class="pricing_card">
+      <h5>Starter Pack</h5>
+      <div id="coin_num">
+        <span>
+      <p>100</p>
+       <img id="procoin_img" src="../../image/procoin.png">
+       </span>
+       <p>ProCoin</p>
+      </div>
+      <div id="coin_num">
+        <h5>$10</h5>
+      <p id="price_subtext">$0.10 per Coin</p>
+      </div>
+      <button type="submit">Purchase</button>
+    </div>
+    <div class="pricing_card">
+      <h5>Basic Pack</h5>
+      <div id="coin_num">
+        <span>
+      <p>250</p>
+       <img id="procoin_img" src="../../image/procoin.png">
+       </span>
+       <p>ProCoin</p>
+      </div>
+      <div id="coin_num">
+        <h5>$20</h5>
+      <p id="price_subtext">$0.08 per Coin</p>
+      </div>
+      <button type="submit">Purchase</button>
+    </div>
+    <div class="pricing_card">
+      <h5>Pro Pack</h5>
+       <div id="coin_num">
+        <span>
+      <p>500</p>
+       <img id="procoin_img" src="../../image/procoin.png">
+       </span>
+       <p>ProCoin</p>
+      </div>
+      <div id="coin_num">
+        <h5>$40</h5>
+      <p id="price_subtext">$0.08 per Coin</p>
+      </div>
+      <button type="submit">Purchase</button>
+    </div>
+    <div class="pricing_card">
+      <h5>Ultimate Pack</h5>
+      <div id="coin_num">
+        <span>
+      <p>1000</p>
+       <img id="procoin_img" src="../../image/procoin.png">
+       </span>
+       <p>ProCoin</p>
+      </div>
+      <div id="coin_num">
+        <h5>$80</h5>
+      <p id="price_subtext">$0.08 per Coin</p>
+      </div>
+      <button type="submit">Purchase</button>
+    </div>
+    <div id="custom_amount">
+      <div id="custom_card">
+        <div id="custom_heading">
+        <h5>Custom Amount</h5>
+        <p>Decide for yourself how many coins you want to buy</p>
+        </div>
+        <div id="custom_main">
+        <input type="number" min="1" id="custom_input" placeholder="Number of ProCoins">
+        <button type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div id="custom_price">
+          <span>Total Price: $0.00</span>
+        </div>
+        <div id="custom_note">
+          <p><span>Note:</span> Custom purchases have a higher rate ($0.10 per coin) than savings packages. Choose a package to get the best price.</p>
+        </div>
+    <div id="logout_confirmation">
+      <div id="logout_confirmation_value">
+        <img id="logout_img" src="../../image/logout.png">
+        <h5>Ready to log out?</h5>
+        <span>You’ll be signed out from your workspace — don’t worry, everything stays right where you left it.</span>
+        <div id="logout_button">
+          <button id="logout_cancel">Cancel</button>
+          <button id="logout_submit">Log out</button>
+        </div>
+      </div>
+    </div>
+        <script src="../../navbar/style.js"></script>
+<script src="../../navbar/profile.js"></script>
+<script src="price.js"></script>
+<script src="hover.js"></script>
+</div>
+  </body>
+</html>

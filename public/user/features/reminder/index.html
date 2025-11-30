@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../../../navbar/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+    </head>
+    <body>
+        <div id="main_navbar"></div>
+
+        <h5>Reminders</h5>
+        <span class="subheading">Manage your reminders and schedule</span>
+
+        <div class="reminder-card-area">
+
+            <div class="reminder-card">
+                <div class="reminder-top">
+
+                    <span class="reminder-title">Reminder Title</span>
+
+                    <span class="reminder-status status-scheduled">Scheduled</span>
+
+                    <div class="reminder-dropdown">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+
+                    <div class="reminder-dropdown-menu">
+                        <span data-action="delete"><i class="fa-solid fa-trash"></i>Delete</span>
+                        <span data-action="edit"><i class="fa-solid fa-pen-to-square"></i>Edit</span>
+                    </div>
+                </div>
+
+                <p>Reminder description</p>
+                
+                <div class="reminder-time">
+                    <span><i class="fa-regular fa-calendar"></i>dd month yyyy</span>
+                    <span class="dot">●</span>
+                    <span><i class="fa-regular fa-clock"></i>hh:mm AM/PM</span>
+                </div>
+
+                <span class="reminder-lead">
+                    <i class="fa-regular fa-bell"></i>x minutes before
+                </span>
+
+                <div class="reminder-method">
+                    <span>Website Notification</span>
+                    <span>Email</span>
+                </div>
+
+            </div>
+        </div>
+        
+        <script src="../../../navbar/navbarFunction.js"></script>
+        <script src="../../../navbar/style.js"></script>
+        <script src="../../../navbar/profile.js"></script>
+        <script src="reminder.js"></script>
+    </body>
+</html>

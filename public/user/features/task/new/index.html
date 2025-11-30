@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../../../../navbar/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+    </head>
+    <body>
+        <div id="main_navbar">
+            
+        </div>
+        <div id="first_card">
+            <div id="title_value">
+            <span>Task Title</span>
+            <input id="title_input" type="text" spellcheck="false" placeholder="Enter task title">
+            </div>
+            <div id="title_value">
+            <span>Description</span>
+            <textarea id="description_input" spellcheck="false" type="text" placeholder="Enter your task description"></textarea>
+            </div>
+        </div>
+        <div id="second_card">
+            <div id="second_card_value">
+            <span>Priority</span>
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <div id="priority_label">
+                <div id="label">
+                    <div id="dot"></div> 
+                    <span>
+                    Low Priority
+                    </span>
+                </div>
+            </div>
+            <span id="category_label">Category</span>
+            <select id="category">
+                <option value="" disabled selected hidden>Select category</option>
+                <option>Job</option>
+                <option>Personal</option>
+                <option>Study</option>
+                <option>Health</option>
+                <option>Finance</option>
+                <option>Hoby</option>
+                <option>Other</option>
+            </select>
+            </div>
+        </div>
+        <div id="third_card">
+            <div id="third_card_value">
+                <span>Deadline</span>
+      <br>
+      <br>
+      <div id="grid">
+      <div class="field">
+        <label>Date</label>
+        <select class="date">
+          <option value="" disabled selected hidden>Select Date</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+        </option>
+      </div>
+      <div class="field">
+        <label>Month</label>
+        <select class="month">
+  <option value="" disabled selected hidden>Select Month</option>
+  <option value="1">January</option>
+  <option value="2">February</option>
+  <option value="3">March</option>
+  <option value="4">April</option>
+  <option value="5">May</option>
+  <option value="6">June</option>
+  <option value="7">July</option>
+  <option value="8">August</option>
+  <option value="9">September</option>
+  <option value="10">October</option>
+  <option value="11">November</option>
+  <option value="12">December</option>
+</select>
+      </div>
+      <div class="field">
+        <label>Year</label>
+        <select class="year">
+          <option value="" disabled selected hidden>Select Year</option>
+          <option>2025</option>
+          <option>2026</option>
+          <option>2027</option>
+          <option>2028</option>
+          <option>2029</option>
+          <option>2030</option>
+        </select>
+      </div>
+      </div>
+      <br>
+      <div style="line-height:20px;">
+        <label>Time</label>
+        <input id="time" type="time">
+            </div>
+        </div>
+        </div>
+        <br>
+        
+        <button type="submit" id="create_reminder">Create Task</button>
+        <script src="../../../../navbar/navbarFunction.js"></script>
+        <script src="../../../../navbar/style.js"></script>
+        <script src="../../../../navbar/profile.js"></script>
+        <script src="priority.js"></script>
+    </body>
+</html>

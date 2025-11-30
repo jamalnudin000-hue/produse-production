@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../../../navbar/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+    </head>
+    <body id="task">
+        <div id="main_navbar"></div>
+      <div id="task_stats">
+        <div id="task_stats_all">
+          <div id="list_icon">
+            <i class="fa-solid fa-list"></i>
+          </div>
+          <div id="task_list_value">
+            <span id="top_span">Total Task</span>
+            <span id="amount">10</span>
+          </div>
+        </div>
+        <div id="horizontal_task_stats">
+        <div id="task_stats_all">
+          <div id="pending_icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <div id="task_pending_value">
+            <span id="top_span">Pending</span>
+            <span id="amount">10</span>
+          </div>
+        </div>
+        <div id="task_stats_all">
+          <div id="completed_icon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div id="task_completed_value">
+            <span id="top_span">Completed</span>
+            <span id="amount">10</span>
+          </div> 
+        </div>
+        </div>
+      </div>
+      <div id="task_type">
+        <div id="task_type_part">All Task</div>
+        <div id="task_type_part">Pending</div>
+        <div id="task_type_part">Completed</div>
+      </div>
+
+      <!-- container kosong, nanti diisi task.js -->
+      <div id="task_list"></div>
+
+      <div id="create_task">
+        <!-- kalau mau nanti kamu bisa isi tombol "New Task" di sini -->
+      </div>
+
+      <div id="reminder_example">
+        <span>Task created successfully !</span>
+        <p>Would you like to add a reminder for this task?</p>
+        <div id="reminder_button">
+        <button type="submit">Yes, add it</button>
+        <button type="submit">No</button>
+        </div>
+      </div>
+      <div id="reminder_modal">
+        <div id="reminder_modal_content">
+        <span>Add Reminder</span>
+        <label>Title</label>
+        <input type="text" id="reminder_title_input" placeholder="Enter the title of this reminder">
+        <label>Description</label>
+        <textarea id="reminder_description_input" placeholder="Add details of your reminder..."></textarea>
+        <div id="grid">
+      <div class="field">
+        <label>Date</label>
+        <select class="date">
+          <option value="" disabled selected hidden>Select Date</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+        </option>
+      </div>
+      <div class="field">
+        <label>Month</label>
+        <select class="month">
+          <option value="" disabled selected hidden>Select Month</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Year</label>
+        <select class="year">
+          <option value="" disabled selected hidden>Select Year</option>
+          <option>2025</option>
+          <option>2026</option>
+          <option>2027</option>
+          <option>2028</option>
+          <option>2029</option>
+          <option>2030</option>
+        </select>
+      </div>
+      </div>
+      <div style="line-height:20px;">
+        <label>Time</label>
+        <input id="clock_time" type="time">
+        <br>
+        <!-- <small id="tz_hint" style="color:#555;display:block;margin-top:6px;"></small> -->
+    </div>
+      <label>Reminder me before (in minutes)</label>
+      <input type="number" id="reminder_lead_input" placeholder="Enter number">
+      <div id="reminder_method">
+        <div id="reminder_method_part">
+        <input type="checkbox"><span>Website Notif</span>
+        </div>
+      </div>
+      
+    <div id="reminder_modal_button">
+      <button type="submit">Create Reminder</button>
+      <button type="submit">Cancel</button>
+    </div>
+        </div>
+      </div>
+<script src="../../../navbar/navbarFunction.js"></script>
+        <script src="../../../navbar/style.js"></script>
+        <script src="../../../navbar/profile.js"></script>
+        <script src="task.js"></script>
+        <script src="new/priority.js"></script>
+        </body>
+</html>

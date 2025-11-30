@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — PRODUSE</title>
+  <style>
+body.auth{
+  background: #F9F9F9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.auth-card{
+  width: 100%; max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  padding: 28px;
+  text-align: center;
+}
+.auth-logo{ width: 55%; margin: 0 auto 8px; display:block; }
+.auth-title{ font-size: 24px; margin: 6px 0; }
+.auth-sub{ color: #555; margin-bottom: 16px; }
+
+.notice{
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: none;
+  text-align: left;
+}
+.notice.ok{ display:block; background:#F0FDF4; border:1px solid #E8F5E9; }
+.notice.err{ display:block; background:#FEF2F2; border:1px solid #FEE2E2; color:#991B1B; }
+
+.auth-divider{
+  position: relative; margin: 18px 0;
+  font-size: 13px; color: #64748B;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.auth-divider:before, .auth-divider:after{
+  content:""; display:block; height:1px; background:#E0E0E0;
+  position:absolute; top:50%; width:40%;
+}
+.auth-divider:before{ left:0; } .auth-divider:after{ right:0; }
+
+.auth-ghost-btn{
+  display:flex; padding:10px 18px; border-radius: 8px;
+  border: 1.5px solid #1976D2; color:#1976D2; text-decoration:none; font-weight:600;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.auth-ghost-btn:hover{ background:#E3F2FD; }
+
+.auth-terms{ margin-top: 16px; color:#64748B; font-size:12px; }
+input {
+  padding: 8px;
+  font-size: 16px;
+  width: 70%;
+  text-decoration:none;
+  border: 0px solid #1976D2;
+  border-bottom: 2px solid #1976D2;
+  outline: none;
+}
+button {
+  background-color: #1976D2;
+  font-size: 16px;
+  padding: 10px 16px;
+  width: 40%;
+  border: none;
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#get_started_button{ display:inline-block; text-decoration:none; }
+#google { width: 18px; margin-right:10px; }
+  </style>
+</head>
+<body class="auth">
+  <div class="auth-card">
+    <img src="../image/logo.png" alt="PRODUSE logo" class="auth-logo" />
+    <br>
+    <h1 class="auth-title">Welcome back 👋</h1>
+    <p class="auth-sub">Sign in to continue to PRODUSE</p>
+
+    <!-- FORM LOGIN YANG BENAR -->
+    <form id="login-form" autocomplete="on" novalidate>
+      <input type="text" name="emailOrUsername" placeholder="Email" required>
+      <br><br>
+      <input type="password" name="password" placeholder="Password" required minlength="8">
+      <br><br><br>
+      <button id="login-btn" type="submit">Log In</button>
+    </form>
+
+    <div id="notice" class="notice"></div>
+
+    <p class="auth-terms">Don't have an account yet?
+      <a href="../sign-up/index.html">Sign up</a>
+    </p>
+
+    <div class="auth-divider"><span>or</span></div>
+    <a href="#" class="auth-ghost-btn"><img id="google" src="../image/google.png" alt="">Continue With Google</a>
+
+    <p class="auth-terms">By lorem ipsum you agree to our
+      <a href="#">Terms</a> & <a href="#">Privacy</a>.
+    </p>
+  </div>
+
+  <!-- Script dipasang di AKHIR body -->
+  <script>
+  (function() {
+    const API = ``;
+    const form = document.getElementById('login-form');
+    const notice = document.getElementById('notice');
+    const btn = document.getElementById('login-btn');
+
+    function showError(msg) {
+      notice.className = 'notice err';
+      notice.textContent = msg;
+    }
+    function showOk(msg) {
+      notice.className = 'notice ok';
+      notice.textContent = msg;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailOrUsername = form.elements['emailOrUsername'].value.trim();
+      const password = form.elements['password'].value;
+
+      if (!emailOrUsername || !password) {
+        showError('Email dan password harus diisi');
+        return;
+      }
+
+      btn.disabled = true;
+
+      try {
+        const r = await fetch(`${API}/api/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({ emailOrUsername, password })
+  });
+
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          throw new Error(data.message || 'Gagal login');
+        }
+
+        // (opsional) verifikasi token/cookie dengan /me
+        const meRes = await fetch(`${API}/api/auth/me`, { credentials: 'include' });
+        if (!meRes.ok) throw new Error('Gagal mengambil profil');
+        const me = await meRes.json();
+
+        showOk('Login sukses. Halo, ' + (me.name || me.email) + '!');
+        // redirect sementara ke "dashboard" -> pakai halaman utama dulu
+        setTimeout(() => {
+          window.location.href = '../user/dashboard/';
+        }, 500);
+
+      } catch (err) {
+        showError(err.message || 'Server error');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    // Placeholder agar GIS tidak error kalau callback terpicu
+    window.handleCredentialResponse = function() {
+      showError('Google Sign-In belum dikonfigurasi.');
+    };
+  })();
+  </script>
+  <script>
+const im = document.querySelector('img[alt="work"]') || document.querySelector('img');
+im.addEventListener('load', () => console.log('IMG OK:', im.naturalWidth, 'x', im.naturalHeight));
+im.addEventListener('error', (e) => console.error('IMG FAIL:', im.src, e));
+
+(async () => {
+  try {
+    const r = await fetch(im.getAttribute('src'));
+    console.log('FETCH status:', r.status, r.statusText);
+  } catch (err) {
+    console.error('FETCH error:', err);
+  }
+})();
+</script>
+</body>
+</html>

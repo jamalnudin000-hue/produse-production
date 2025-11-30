@@ -1,0 +1,72 @@
+html, body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f7f7f7;
+    height:100%;
+}
+#main_card {
+    margin:70px 15px 0 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding:15px;
+    border-radius: 10px;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    height:100%;
+}
+#card_header {
+    border:0px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#card_header span {
+    font-weight:450;
+}
+#right_card_header {
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.fa-thumbtack {
+    color:#555555;
+    cursor: pointer;
+    font-size: 20px;
+}
+.fa-arrow-left {
+    font-size: 20px;
+    font-weight: 100;
+    cursor: pointer;
+}
+#right_card_header button {
+    background-color: #2e7d32;
+    border:none;
+    color:white;
+    padding:8px 20px;
+    border-radius:8px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+}
+#main_card input {
+    font-size:28px;
+    font-weight: 700;
+    color: #282B37;
+    border:none;
+    margin:0 10px;
+    margin:20px 10px 0 10px;
+}
+#main_card input:focus {
+    outline: none;
+}
+#main_card textarea {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    border:none;
+    resize: vertical;
+    margin:0 10px;
+}
+#main_card textarea:focus {
+    outline: none;
+}

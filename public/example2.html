@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="navbar/style.css">
+<link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"/>
+<style>
+  .workspace-toolbar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  margin-top:70px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.search-bar input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #444;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-tabs button.active {
+  background: #2e7d32;
+  color: #fff;
+  border-color: #2e7d32;
+}
+
+.filter-tabs button:hover {
+  background: #e8f5e9;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 0;
+  color: #666;
+}
+.empty-state i {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+</style><!-- Global layout -->
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- isi navigasi -->
+  </aside>
+
+  <!-- Main Area -->
+  <main class="main-content">
+    
+    <!-- Top Navbar global -->
+    <header class="top-navbar">
+      <div id="main_navbar"></div>
+    </header>
+
+    <!-- Workspace Toolbar (khusus halaman ini) -->
+    <section class="workspace-toolbar">
+      <div class="search-bar">
+        <input type="text" placeholder="Cari catatan atau jurnal..." />
+      </div>
+      <div class="filter-tabs">
+        <button class="active"><i class="icon-list"></i> All</button>
+        <button><i class="icon-note"></i> Notes</button>
+        <button><i class="icon-book"></i> Journal</button>
+        <button><i class="icon-pin"></i> Pinned</button>
+      </div>
+    </section>
+
+    <!-- Konten utama workspace -->
+    <section class="workspace-content">
+      <div class="empty-state">
+        <i class="icon-empty"></i>
+        <p>Tidak ada catatan ditemukan</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="navbar/navbarFunction.js"></script>
+        <script src="navbar/style.js"></script>
+        <script src="navbar/profile.js"></script>
+        </body>
+        </html>

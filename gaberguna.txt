@@ -1,0 +1,12 @@
+migrate ke express js, bikin fungsi login dan logout work
+UI/UX Task menu (frontend)
+Fitur todolist
+delet+edit todo
+user profile
+Task to reminder modal
+Reminder menu
+Writing menu + create note
+reminder bot whatsapp
+profile page fungsi
+username random
+pr : bikin verif email, gemini step 2
